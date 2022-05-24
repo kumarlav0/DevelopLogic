@@ -178,10 +178,21 @@ print(allMaleWhoseAgeIsGreaterThen20AndHavingSomeContact_2)
  */
 
 //print(users.count)
-//users.removeAll(where: { $0.user.age <= 18 })
+users.removeAll(where: { $0.user.age <= 18 })
 //print(users.count)
 
 
 /**
 We used `map`, `compactMap`,  `Filter`,  `contains`, `firstIndex`, `lastIndex`, `removeAll`
  */
+
+
+/**
+ Seprate a array of string from a comma seprated string.
+ */
+
+let alphabates = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z"
+
+let arrayOfAlphabtes = alphabates.components(separatedBy: ",")
+print(arrayOfAlphabtes)
+print(arrayOfAlphabtes.count)
