@@ -196,3 +196,48 @@ let alphabates = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z"
 let arrayOfAlphabtes = alphabates.components(separatedBy: ",")
 print(arrayOfAlphabtes)
 print(arrayOfAlphabtes.count)
+
+//===================================
+
+struct User {
+    var userName: String
+    var userAge: Int
+}
+
+let user = User(userName: "Shelly", userAge: 26)
+
+print(user.userName)
+let mirror = Mirror(reflecting: user)
+print(mirror)
+print(mirror.children)
+
+for child in mirror.children {
+    print(child.label ?? " ", ": ", child.value)
+}
+
+func nextStep(age: Int, completion: (_ is18Plus: Bool)-> Void ) {
+    if age > 18 {
+        print("18+ Young Buddy ☑️")
+        print("Lets go for a date 👫")
+        completion(true)
+    } else {
+        print("Not an adult....❌")
+        completion(false)
+    }
+}
+
+func completionWalaMethod(comletion: (_ age: Int)-> Void) {
+    print("A")
+    comletion(34)
+    print("E")
+}
+
+completionWalaMethod { age in
+    print("B")
+    nextStep(age: age) { is18Plus in
+        print("C : ", is18Plus)
+    }
+    print("D")
+}
+
+
