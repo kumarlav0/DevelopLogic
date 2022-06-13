@@ -240,4 +240,17 @@ completionWalaMethod { age in
     print("D")
 }
 
+// OUTPUT 
 
+/*
+
+userName :  Shelly
+userAge :  26
+A
+B
+18+ Young Buddy ☑️
+C :  true
+D
+E
+
+*/
